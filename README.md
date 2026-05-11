@@ -5,7 +5,7 @@ Este repositorio prepara o schema e os dados do Chinook para uso em PostgreSQL.
 ### Integrantes
 
 - Ana Laura
-- Estefani
+- Estéfani
 - Filype
 - Isabela
 - Lucas
