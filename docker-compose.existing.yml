@@ -1,0 +1,16 @@
+version: '3.8'
+name: chinook-loader
+services:
+  schema-loader:
+    image: postgres:16
+    network_mode: "container:${PG_CONTAINER_NAME:-chinook_pg}"
+    environment:
+      PGUSER: ${PGUSER:-chinook}
+      PGPASSWORD: ${PGPASSWORD:-chinook}
+      PGHOST: ${PGHOST:-localhost}
+      PGPORT: ${PGPORT:-5432}
+      PGDATABASE: ${PGDATABASE:-postgres}
+    volumes:
+      - ./ChinookDatabase/DataSources/Chinook_PostgreSql.sql:/tmp/Chinook_PostgreSql.sql:ro
+    command: >
+      bash -c "until pg_isready -h \"$PGHOST\" -p \"$PGPORT\" -U \"$PGUSER\"; do sleep 2; done; psql -f /tmp/Chinook_PostgreSql.sql"
