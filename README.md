@@ -38,6 +38,12 @@ PG_CONTAINER_NAME=chinook_pg PGUSER=chinook PGPASSWORD=chinook PGDATABASE=postgr
 docker compose up -d
 ```
 
+### Data Model
+
+The Chinook data model represents a digital media store, including tables for artists, albums, media tracks, invoices and customers.
+
+<img width="836" alt="image" src="https://github.com/lerocha/chinook-database/assets/135025/cea7a05a-5c36-40cd-84c7-488307a123f4">
+
 ### Creditos
 
 Schema e dados baseados no projeto Chinook Database, de Luis Rocha (https://github.com/lerocha/chinook-database).
